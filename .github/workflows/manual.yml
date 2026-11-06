@@ -32,6 +32,12 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v6
 
+    - name: Set current date as ENV
+      run: echo "NOW=$(date +'%Y-%m-%d')" >> $GITHUB_ENV
+
+    - name: Use the date variable
+      run: echo "The current date is ${{ env.NOW }}"
+
     - name: 检查服务器配置
       run: |
         echo "-------------- ----------------CPU信息-------------------------------------------"

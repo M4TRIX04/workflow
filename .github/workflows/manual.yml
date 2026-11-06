@@ -35,6 +35,9 @@ jobs:
     - name: Set current date as ENV
       run: echo "NOW=$(date +'%Y-%m-%d')" >> $GITHUB_ENV
 
+    - name: Show timeout-minutes
+      run: echo "The current date is $(date +'%Y%m%d%H%M%S')"
+
     - name: Use the date variable
       run: echo "The current date is ${{ env.NOW }}"
 
